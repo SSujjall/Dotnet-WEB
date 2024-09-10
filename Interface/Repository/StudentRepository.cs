@@ -14,7 +14,7 @@ namespace WEB.Interface.Repository
         public StudentRepository(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connectionString = _configuration.GetConnectionString("TestStudents");
+            _connectionString = _configuration.GetConnectionString("MyDbCon");
         }
 
         public async Task<List<Student>> Display()

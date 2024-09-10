@@ -15,7 +15,7 @@ public class CheckoutRepository : ICheckoutRepository
     public CheckoutRepository(IConfiguration configuration)
     {
         this._configuration = configuration;
-        _connectionString = _configuration.GetConnectionString("TestStudents");
+        _connectionString = _configuration.GetConnectionString("MyDbCon");
     }
 
     public async Task<List<Checkout>> GetCheckout()
