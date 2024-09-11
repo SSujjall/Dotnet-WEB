@@ -34,7 +34,7 @@ namespace WEB.Controllers
         {
             var existingUser = await _userRepository.FindUser(model.Username);
 
-            if (existingUser != null)
+            if (existingUser)
             {
                 return BadRequest(new { Message = "username already exists, failed to register." });
             }

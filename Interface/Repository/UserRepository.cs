@@ -25,7 +25,7 @@ namespace WEB.Interface.Repository
             _configuration = configuration;
         }
 
-        public async Task<string> FindUser(string username)
+        public async Task<bool> FindUser(string username)
         {
             using (var con = new SqlConnection(_connectionString))
             {
@@ -42,11 +42,11 @@ namespace WEB.Interface.Repository
                 if (reader.HasRows)
                 {
                     await con.CloseAsync();
-                    return "User Exists";
+                    return true;
                 }
 
                 await con.CloseAsync();
-                return null;
+                return false;
             }
         }
 

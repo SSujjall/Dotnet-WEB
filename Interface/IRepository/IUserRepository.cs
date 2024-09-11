@@ -9,6 +9,6 @@ namespace WEB.Interface.IRepository
         public Task<Response> GetUserById(int id);
         public Task<Response> UserLogin(UserDTO model);
         public Task UserRegister(UserDTO model);
-        public Task<string> FindUser(string username);
+        public Task<bool> FindUser(string username);
     }
 }
